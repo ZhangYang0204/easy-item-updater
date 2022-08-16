@@ -3,7 +3,7 @@ version: 1.0.1
 main: pers.zhangyang.easyitemupdater.EasyItemUpdater
 api-version: 1.13
 commands:
-  EasyTeleportPoint:
-    aliases: etp
+  EasyItemUpdater:
+    aliases: etu
 softdepend:
   - Vault
