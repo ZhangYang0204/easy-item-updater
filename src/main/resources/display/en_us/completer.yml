@@ -1,0 +1,7 @@
+completer:
+
+  #When you type /easyItemUpdater you will be prompted to complete the following
+  easyItemUpdater:
+    - "help"
+    - "reloadPlugin"
+    - "correctYaml"

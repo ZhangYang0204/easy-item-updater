@@ -1,0 +1,10 @@
+
+daoPackage: []
+listenerPackage:
+  - "pers/zhangyang/easyitemupdater/listener"
+executorPackage:
+  - "pers/zhangyang/easyitemupdater/executor"
+yamlPackage:
+  - "pers/zhangyang/easyitemupdater/yaml"
+guiButtonHandlerPackage:
+  - "pers/zhangyang/easyitemupdater/listener"

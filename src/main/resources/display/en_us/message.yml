@@ -1,0 +1,41 @@
+message:
+  chat:
+    failureGetLatestVersion:
+      - "&c&l Failed to get the latest version of EasyItemUpdater."
+    notPermission:
+      - "&c&lYou are missing permission &f{permission}."
+    correctYaml:
+      - "&b&lFixed all Yaml files for missing and redundant keys."
+    help:
+      - "&b&l==== help list ===="
+      - "&b&l/EasyItemUpdater help View Help"
+      - "&b&l/EasyItemUpdater reloadPlugin reload plugin"
+      - "&b&l/EasyItemUpdater correctYaml Fix Yaml file"
+    notifyVersion:
+      - "&b&lThe current version of EasyItemUpdater is &f{current_version}, &b&lthe latest version is &f{latest_version}."
+    enablePlugin:
+      - "&a╭━━━╮╱╱╱╱╱╱╱╱╱╭━━┳╮╱╱╱╱╱╱╭╮╱╭╮╱╱╱╱╭╮╱╱╭╮"
+      - "&a┃╭━━╯╱╱╱╱╱╱╱╱╱╰┫┣╯╰╮╱╱╱╱╱┃┃╱┃┃╱╱╱╱┃┃╱╭╯╰╮"
+      - "&a┃╰━━┳━━┳━━┳╮╱╭╮┃┣╮╭╋━━┳╮╭┫┃╱┃┣━━┳━╯┣━┻╮╭╋━━┳━╮"
+      - "&a┃╭━━┫╭╮┃━━┫┃╱┃┃┃┃┃┃┃┃━┫╰╯┃┃╱┃┃╭╮┃╭╮┃╭╮┃┃┃┃━┫╭╯"
+      - "&a┃╰━━┫╭╮┣━━┃╰━╯┣┫┣┫╰┫┃━┫┃┃┃╰━╯┃╰╯┃╰╯┃╭╮┃╰┫┃━┫┃"
+      - "&a╰━━━┻╯╰┻━━┻━╮╭┻━━┻━┻━━┻┻┻┻━━━┫╭━┻━━┻╯╰┻━┻━━┻╯"
+    disablePlugin:
+      - "&c╭━━━╮╱╱╱╱╱╱╱╱╱╭━━┳╮╱╱╱╱╱╱╭╮╱╭╮╱╱╱╱╭╮╱╱╭╮"
+      - "&c┃╭━━╯╱╱╱╱╱╱╱╱╱╰┫┣╯╰╮╱╱╱╱╱┃┃╱┃┃╱╱╱╱┃┃╱╭╯╰╮"
+      - "&c┃╰━━┳━━┳━━┳╮╱╭╮┃┣╮╭╋━━┳╮╭┫┃╱┃┣━━┳━╯┣━┻╮╭╋━━┳━╮"
+      - "&c┃╭━━┫╭╮┃━━┫┃╱┃┃┃┃┃┃┃┃━┫╰╯┃┃╱┃┃╭╮┃╭╮┃╭╮┃┃┃┃━┫╭╯"
+      - "&c┃╰━━┫╭╮┣━━┃╰━╯┣┫┣┫╰┫┃━┫┃┃┃╰━╯┃╰╯┃╰╯┃╭╮┃╰┫┃━┫┃"
+      - "&c╰━━━┻╯╰┻━━┻━╮╭┻━━┻━┻━━┻┻┻┻━━━┫╭━┻━━┻╯╰┻━┻━━┻╯"
+
+
+    reloadPlugin:
+      - "&c&l reload successful."
+    updateItemStack:
+      - "&c&l This item is obsolete and was automatically recycled by the server."
+
+
+
+
+
+

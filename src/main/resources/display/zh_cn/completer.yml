@@ -1,0 +1,7 @@
+completer:
+
+  #当输入了/easyItemUpdater后将提示补全以下内容
+  easyItemUpdater:
+    - "help"
+    - "reloadPlugin"
+    - "correctYaml"
