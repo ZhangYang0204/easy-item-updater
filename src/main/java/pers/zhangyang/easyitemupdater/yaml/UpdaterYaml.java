@@ -27,17 +27,32 @@ public class UpdaterYaml extends YamlBase {
         for (String s:configurationSection.getKeys(false)){
             List<String> loreMatcherList=getStringList("updater."+s+".loreMatcher");
             if (loreMatcherList!=null){
-                teleportPointList.add(new Updater(loreMatcherList));
+
+                ItemStack cItemStack=getItemStack("updater."+s+".compensatedItemStack");
+                List<String> cmdList=getStringList("updater."+s+".compensatedCommand");
+
+                Updater updater=new Updater(loreMatcherList);
+                updater.setCmdList(cmdList);
+                updater.setCompensatedItemStack(cItemStack);
+
+                teleportPointList.add(updater);
                 continue;
             }
 
-            ItemStack itemStack=getItemStack("updater."+s+".itemStack");
+            ItemStack itemStack=getItemStack("updater."+s+".recycledItemStack");
             if (itemStack==null){
                 continue;
             }
-            boolean onlyLore=getBooleanDefault("updater."+s+".enableOnlyMatchLore");
             boolean amount=getBooleanDefault("updater."+s+".enableMatchAmount");
-            teleportPointList.add(new Updater(onlyLore,amount,itemStack));
+            Updater updater=new Updater(amount,itemStack);
+
+            ItemStack cItemStack=getItemStack("updater."+s+".compensatedItemStack");
+            List<String> cmdList=getStringList("updater."+s+".compensatedCommand");
+
+            updater.setCmdList(cmdList);
+            updater.setCompensatedItemStack(cItemStack);
+
+            teleportPointList.add(updater);
 
         }
         return teleportPointList;

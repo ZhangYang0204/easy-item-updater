@@ -34,6 +34,8 @@ message:
       - "&c&l reload successful."
     updateItemStack:
       - "&c&l This item is obsolete and was automatically recycled by the server."
+    notEnoughSpace:
+      - "&C&l Backpack space is insufficient to automatically update items, please leave some space for backpack"
 
 
 

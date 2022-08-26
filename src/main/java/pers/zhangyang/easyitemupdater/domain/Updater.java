@@ -5,24 +5,44 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Updater {
-    private boolean enableOnlyMatchLore;
     private boolean enableMatchAmount;
-    private ItemStack itemStack;
+    private ItemStack recycledItemStack;
+
+    private ItemStack   compensatedItemStack;
+
+    private List<String> cmdList;
+
+    @Nullable
+    public List<String> getCmdList() {
+        return cmdList;
+    }
+
+    public void setCmdList(List<String> cmdList) {
+        this.cmdList = cmdList;
+    }
+
     private List<String> loreMatcherList;
 
-    public Updater(boolean enableOnlyMatchLore, boolean enableMatchAmount,@NotNull ItemStack itemStack) {
-        this.enableOnlyMatchLore = enableOnlyMatchLore;
+    public Updater( Boolean enableMatchAmount,@NotNull ItemStack itemStack) {
         this.enableMatchAmount = enableMatchAmount;
-        this.itemStack = itemStack;
+        this.recycledItemStack = itemStack;
     }
+
+
+
     public Updater(List<String> loreMatcherList) {
         this.loreMatcherList = loreMatcherList;
     }
-    public boolean isEnableOnlyMatchLore() {
-        return enableOnlyMatchLore;
+
+    @Nullable
+    public ItemStack getCompensatedItemStack() {
+        return compensatedItemStack;
+    }
+
+    public void setCompensatedItemStack(ItemStack compensatedItemStack) {
+        this.compensatedItemStack = compensatedItemStack;
     }
 
     @Nullable
@@ -35,8 +55,8 @@ public class Updater {
     }
 
     @Nullable
-    public ItemStack getItemStack() {
-        return itemStack;
+    public ItemStack getRecycledItemStack() {
+        return recycledItemStack;
     }
 
 }

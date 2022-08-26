@@ -34,6 +34,8 @@ message:
       - "&c&l重载成功。"
     updateItemStack:
       - "&c&l此物品已经过时，被服务器自动回收。"
+    notEnoughSpace:
+      - "&C&l背包空间不足，无法自动更新物品，请给背包留点空间"
 
 
 

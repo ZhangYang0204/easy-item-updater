@@ -2,25 +2,19 @@ updater:
   no1:
 
     #只要物品描述包含下面的字符串之一(必须填成字符串数组形式)就会被清除，不填此项代表关闭此项
-    #此项一旦填写会覆盖其他的三个选项
+    #此项一旦填写会覆盖recycledItemStack，并且此项默认数量为1
     #As long as the item description contains one of the following strings (must be filled in as an array of strings) it will be cleared, leaving this option blank means that it is turned off
     #Once filled in, it will override the other three options
     loreMatcher:
       - "test1"
 
-    #只匹配描述，默认false，如果这个开启，会覆盖下面的匹配数量，&不会被自动解析为颜色字符§，如果带颜色，请使用§当作颜色字符
-    #注意这不是包含描述，而是检测描述是否完全相等
-    #Match descriptions only, default false, if this is on, it will override the number of matches below, & will not be automatically parsed as color characters §, if with color, please use § as color characters
-    #Note that this does not include descriptions, but detects if the descriptions are exactly equal
-    enableOnlyMatchLore: false
-
-    #是否匹配数量，如果开启，那么数量相等的话，不会更新，默认false
-    #Whether to match the quantity, if on, then the quantity will not be updated if equal, default false
+    #是否开启匹配数量，只对recycledItemStack有效，不填默认为false
+    #开启匹配数量意味着，如果玩家点击的物品堆的数量和recycledItemStack的数量不一致，那么这个物品不算一个可更新的物品堆
     enableMatchAmount: false
 
-    #如果只匹配lore没开启的化，那么会检测物品是不是和下面的相等，下面的物品是个带有lore的泥土，&不会被自动解析为颜色字符§，如果带颜色，请使用§当作颜色字符
+    #如果只匹配lore没开启的化，那么会检测物品是不是和下面的相等，下面的物品是个带有lore的泥土，&不会被自动解析为颜色字符§，如果带颜色，请使用§当作颜色字符，该项匹配数量
     #If only the lore is not turned on, then it will detect if the item is equal to the following one, which is a clay with lore, & will not be automatically resolved as a color character §, if it has color, please use § as a color character
-    itemStack:
+    recycledItemStack:
       ==: org.bukkit.inventory.ItemStack
       v: 3105
       type: DIRT
@@ -28,5 +22,26 @@ updater:
         ==: ItemMeta
         meta-type: UNSPECIFIC
         lore:
-          - '{"extra":[{"text":"test"}],"text":""}'
+          - '{"extra":[{"text":"旧物品"}],"text":""}'
+
+    #每堆recycledItemStack或每1个包含loreMatcher中描述的物品都会换为下面的物品，如果不填代表不替换只回收
+    #Every stack of recycledItemStack or every 1 item described in the included loreMatcher will be replaced with the following items, if not filled in means no replacement only recycling
+    compensatedItemStack:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3105
+      type: DIRT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        lore:
+          - '{"extra":[{"text":"补偿我物品"}],"text":""}'
+
+    #每堆recycledItemStack或每1个包含loreMatcher中描述的物品都会换为下面的物品，如果不填代表不替换只回收
+    #第一个页面的返回按钮点击后执行的指令，格式为 way:command，其中的way指代执行的方式，command是命令，命令无需加/，
+    #执行方式有operator、console、self，分别代表以op身份执行（给玩家op然后执行然后取消玩家op）、控制台执行、自身执行
+    #Every stack of recycledItemStack or every 1 item described in the included loreMatcher will be replaced with the following items, if not filled in means no replacement only recycling
+    #The first page of the return button clicked after the execution of the command, the format of way:command, where the way refers to the way of execution, command is a command, command does not need to add /.
+    # execution way has operator, console, self, respectively, representing to op identity execution (to the player op and then execute and then cancel the player op), console execution, own execution
+    compensatedCommand:
+      - "console:give %player% diamond 1"
 
